@@ -6,9 +6,11 @@ import { auth, db } from '../firebase';
 import * as routes from '../constants/routes';
 
 const SignUpPage = ({ history }) =>
-    <div>
-        <h1>SignUp</h1>
-        <SignUpForm history={history}/>
+    <div className="form_login">
+        <div className="form_login_span">
+            <h1>Sign Up</h1>
+            <SignUpForm history={history}/>
+        </div>
     </div>
 
 const INITIAL_STATE = {
@@ -77,39 +79,41 @@ class SignUpForm extends Component {
 
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <input 
-                    value={username}
-                    onChange={event => this.setState(byPropKey('username', event.target.value))}
-                    type="text"
-                    placeholder="Full Name"
-                />
-                <input 
-                    value={email}
-                    onChange={event => this.setState(byPropKey('email', event.target.value))}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                <input 
-                    value={passwordOne}
-                    onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-                    type="password"
-                    placeholder="Password"
-                    autoComplete="true"
-                />
-                <input 
-                    value={passwordTwo}
-                    onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-                    type="password"
-                    placeholder="Confirm Password"
-                    autoComplete="true"
-                />
-                <button disabled={isInvalid} type="submit">
-                    Sign Up
-                </button>
+            <div className="form_login_child">
+                <form onSubmit={this.onSubmit}>
+                    <input 
+                        value={username}
+                        onChange={event => this.setState(byPropKey('username', event.target.value))}
+                        type="text"
+                        placeholder="Full Name"
+                    />
+                    <input 
+                        value={email}
+                        onChange={event => this.setState(byPropKey('email', event.target.value))}
+                        type="text"
+                        placeholder="Email Address"
+                    />
+                    <input 
+                        value={passwordOne}
+                        onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                        type="password"
+                        placeholder="Password"
+                        autoComplete="true"
+                    />
+                    <input 
+                        value={passwordTwo}
+                        onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                        type="password"
+                        placeholder="Confirm Password"
+                        autoComplete="true"
+                    />
+                    <button disabled={isInvalid} type="submit">
+                        Sign Up
+                    </button>
 
-                {error && <p>{error.message}</p>}
-            </form>
+                    {error && <p>{error.message}</p>}
+                </form>
+            </div>
         );
     }
 }

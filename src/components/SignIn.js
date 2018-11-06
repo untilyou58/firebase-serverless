@@ -7,11 +7,13 @@ import { auth } from '../firebase';
 import * as routes from '../constants/routes';
 
 const SignInPage = ({ history }) =>
-    <div>
-        <h1>SignIn</h1>
-        <SignInForm history={history} />
-        <PasswordForgetLink />
-        <SignUpLink />
+    <div className="form_login">
+        <div className="form_login_span">
+            <h1>Log In</h1>
+            <SignInForm history={history} />
+            <p><PasswordForgetLink /></p>
+            <SignUpLink />
+        </div>
     </div>
 
     const INITIAL_STATE = {
@@ -65,26 +67,28 @@ const SignInPage = ({ history }) =>
                 email === '';
     
             return (
-                <form onSubmit={this.onSubmit}>
-                    <input 
-                        value={email}
-                        onChange={event => this.setState(byPropKey('email', event.target.value))}
-                        type="text"
-                        placeholder="Email Address"
-                    />
-                    <input 
-                        value={password}
-                        onChange={event => this.setState(byPropKey('password', event.target.value))}
-                        type="password"
-                        placeholder="Password"
-                        autoComplete="true"
-                    />
-                    <button disabled={isInvalid} type="submit">
-                        Sign In
-                    </button>
-    
-                    {error && <p>{error.message}</p>}
-                </form>
+                <div className="form_login_child">
+                    <form onSubmit={this.onSubmit}>
+                        <input 
+                            value={email}
+                            onChange={event => this.setState(byPropKey('email', event.target.value))}
+                            type="text"
+                            placeholder="Email Address"
+                        />
+                        <input 
+                            value={password}
+                            onChange={event => this.setState(byPropKey('password', event.target.value))}
+                            type="password"
+                            placeholder="Password"
+                            autoComplete="true"
+                        />
+                        <button disabled={isInvalid} type="submit">
+                            Sign In
+                        </button>
+        
+                        {error && <p>{error.message}</p>}
+                    </form>
+                </div>
             );
         }
     }

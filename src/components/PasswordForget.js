@@ -6,10 +6,12 @@ import { auth } from '../firebase';
 import * as routes from '../constants/routes';
 
 const PasswordForgetPage = () =>
-  <div>
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
-  </div>
+    <div className="form_login">
+        <div className="form_login_span">
+            <h1>Password Forget</h1>
+            <PasswordForgetForm />
+        </div>
+    </div>
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -50,19 +52,21 @@ class PasswordForgetForm extends Component {
     const isInvalid = email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          value={this.state.email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
+        <div className="form_login_child">
+            <form onSubmit={this.onSubmit}>
+                <input
+                value={this.state.email}
+                onChange={event => this.setState(byPropKey('email', event.target.value))}
+                type="text"
+                placeholder="Email Address"
+                />
+                <button disabled={isInvalid} type="submit">
+                Reset My Password
+                </button>
 
-        { error && <p>{error.message}</p> }
-      </form>
+                { error && <p>{error.message}</p> }
+            </form>
+        </div>
     );
   }
 }

@@ -61,7 +61,7 @@ class PasswordChangeForm extends Component {
           autoComplete="true"
         />
         <button disabled={isInvalid} type="submit">
-          Reset My Password
+          Update My Password
         </button>
 
         { error && <p>{error.message}</p> }
