@@ -1,4 +1,3 @@
-<<<<<<< HEAD
  ----------
 # Enviroments:
  1. React 16
@@ -42,4 +41,3 @@ Link tham khảo: [robinwieruch](https://www.robinwieruch.de/complete-firebase-a
 =======
 # firebase-serverless
 React, Firebase, google-book-api
->>>>>>> e350220da3a9afe45b1328feb375c59cb654a455
