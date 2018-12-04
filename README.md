@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  ----------
 # Enviroments:
  1. React 16
@@ -38,3 +39,7 @@ Cài đặt các gói thư viện cần thiết, ở đây là *firebase* và *r
 - `npm install firebase react-router-dom`
  
 Link tham khảo: [robinwieruch](https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial)
+=======
+# firebase-serverless
+React, Firebase, google-book-api
+>>>>>>> e350220da3a9afe45b1328feb375c59cb654a455
